@@ -39,6 +39,7 @@ public class Level1s {
     }
 
     public void createNew() {
+        System.out.println(String.format("%s: createNew invoked", getClass().getSimpleName()));
         this.edit = new Level1();
     }
 
@@ -58,6 +59,10 @@ public class Level1s {
         createNew();
         Map<String,Object> options = new HashMap<>();
         options.put("modal", true);
-        RequestContext.getCurrentInstance().openDialog("level1dialog", options, null);
+        RequestContext.getCurrentInstance().openDialog("level1dialog.xhtml", options, null);
+    }
+
+    public void save() {
+        throw new UnsupportedOperationException();
     }
 }

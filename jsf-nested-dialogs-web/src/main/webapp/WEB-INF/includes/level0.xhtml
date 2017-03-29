@@ -9,12 +9,10 @@
     </h:head>
     <h:body>
         <ui:composition>
-            <p:dialog widgetVar="level2dialog">
-                <h:form>
-                    <p:outputLabel value="Property:"/>
-                    <p:inputText value="#{level2s.edit.property}"/>
-                </h:form>
-            </p:dialog>
+            My Level0s: ...
+            <h:form>
+                <p:commandButton value="Create new Level0" action="#{level0s.openLevel0()}"/>
+            </h:form>
         </ui:composition>
     </h:body>
 </html>

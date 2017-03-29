@@ -15,8 +15,11 @@
  */
 package richtercloud.jsf.nested.dialogs.web;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import org.primefaces.context.RequestContext;
 import richtercloud.jsf.nested.dialogs.jar.Level0;
 
 /**
@@ -35,6 +38,7 @@ public class Level0s {
     }
 
     public void createNew() {
+        System.out.println(String.format("%s: createNew invoked", getClass().getSimpleName()));
         this.edit = new Level0();
     }
 
@@ -44,5 +48,16 @@ public class Level0s {
 
     public void setEdit(Level0 edit) {
         this.edit = edit;
+    }
+
+    public void save() {
+        throw new UnsupportedOperationException();
+    }
+
+    public void openLevel0() {
+        createNew();
+        Map<String,Object> options = new HashMap<>();
+        options.put("modal", true);
+        RequestContext.getCurrentInstance().openDialog("/level0dialog.xhtml", options, null);
     }
 }

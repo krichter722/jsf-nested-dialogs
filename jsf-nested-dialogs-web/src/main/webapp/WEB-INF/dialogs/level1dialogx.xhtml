@@ -9,14 +9,13 @@
     </h:head>
     <h:body>
         <ui:composition>
-            <ui:include src="level2dialog.xhtml"/>
-            <p:dialog widgetVar="level1dialog">
+            <p:dialog widgetVar="level1dialogx">
                 <h:form>
                     <p:outputLabel value="Property:"/>
                     <p:inputText value="#{level1s.edit.property}"/>
                     <p:outputLabel value="Level2 reference: ..."/>
-                    <p:commandButton value="Create new Level2" action="#{level2s.createNew()}" onclick="PF('level2dialog').show();"/>
-<!--                    <p:commandButton value="Create new Level2 (backing bean)" action="#{level2s.openLevel2()}" onclick="PF('level2dialog').show();"/>-->
+                    <ui:include src="/WEB-INF/includes/level2x.xhtml"/>
+                    <h:commandButton value="Save new Level1" action="#{level1s.save()}"/>
                 </h:form>
             </p:dialog>
         </ui:composition>

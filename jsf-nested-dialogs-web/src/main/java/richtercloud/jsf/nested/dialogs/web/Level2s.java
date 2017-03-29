@@ -55,4 +55,8 @@ public class Level2s {
         options.put("modal", true);
         RequestContext.getCurrentInstance().openDialog("level2dialog", options, null);
     }
+
+    public void save() {
+        throw new UnsupportedOperationException();
+    }
 }
